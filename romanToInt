@@ -17,6 +17,7 @@ var romanToInt = function (s) {
 // initialize the total variable for the output
 var total = 0;
 
+// adjust the string so that the values are added from left to right.  in other words, we don't need to determine whether we add or subtract on the fly
 s = s.replace("IV", "IIII");
 s = s.replace("IX", "VIIII");
 s = s.replace("XL", "XXXX");
