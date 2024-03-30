@@ -1,7 +1,4 @@
-/**
- * @param {string} s
- * @return {number}
- */
+// function to convert roman numbers to integers
 var romanToInt = function (s) {
     // create a dictionary to convert the Roman Numeral to a digit
     const symbolToValue = {
