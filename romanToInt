@@ -1,7 +1,7 @@
-// function to convert roman numbers to integers
-var romanToInt = function (s) {
-    // create a dictionary to convert the Roman Numeral to a digit
-    const symbolToValue = {
+// function to convert Roman Numbers to Integers
+var romanNumberToInteger = function (string) {
+    // create a dictionary to convert the Roman Number to the corresponding integer
+    const romanNumberToValue = {
         I: 1,
         V: 5,
         X: 10,
@@ -25,7 +25,7 @@ s = s.replace("CM", "DCCCC");
 // loop through the string values and add them to the total
 for (var i = 0; i < s.length; i++) {
     var keyName = s[i];
-    var keyNameValue = symbolToValue[keyName];
+    var keyNameValue = romanNumberToValue[keyName];
         total += keyNameValue;
 }
 
@@ -33,4 +33,4 @@ return total;
 
 };
 
-romanToInt("III");
+romanNumberToInteger(string);
