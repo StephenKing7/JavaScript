@@ -1,0 +1,34 @@
+var twoSum = function(nums, target) {
+
+    // if the array has two values, then it must equal [0,1]
+    if (nums.length == 2) {
+        return new Array(0,1);
+    }
+
+    // if the array has more than two values
+    if (nums.length > 2) {
+        // loop through the array
+        for (var i = 0; i < nums.length; i++) {
+            // calculate the number that we're looking for
+            var valueSearch = target - nums[i];
+            // if that number exists in the array
+            if (nums.indexOf(valueSearch) > -1) {
+                // and it's not the same value as the current index value
+                if (nums.indexOf(valueSearch) != i) {
+                    // return the index value and the valueSearch's index value
+                    return new Array (i, nums.indexOf(valueSearch));
+                }
+            }
+        }
+    }
+};
+
+/*
+PROMPT:
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+*/
