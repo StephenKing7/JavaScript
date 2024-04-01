@@ -1,9 +1,9 @@
 var isPalindrome = function(x) {
-    x = String(x);
+    forwards = String(x);
 
-    y = String(x).split("").reverse().join("");
+    backwards = String(x).split("").reverse().join("");
 
-    if (x === y) {
+    if (forwards === backwards) {
         return true;
     }
 
