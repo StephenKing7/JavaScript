@@ -1,0 +1,43 @@
+var isValid = function (s) {
+
+    if (s.length %2 !== 0) {
+        return false;
+    }
+
+    var openingParentheses = '({[';
+    var closingParentheses = ')}]';
+
+    var checkArray = new Array();
+    var unMatchedArray = new Array();
+
+    for (var i = 0; i < s.length; i++) {
+        var thisValue = s[i];
+        if (openingParentheses.indexOf(thisValue) > -1) {
+            checkArray.push(thisValue);
+        }
+        var closingIndex = closingParentheses.indexOf(thisValue);
+        if (closingIndex > -1) {
+            if (checkArray[checkArray.length - 1] == openingParentheses[closingIndex]) {
+                checkArray.pop();
+            } else {
+            unMatchedArray.push(thisValue);
+            }
+        }
+    }
+    if (checkArray.length == 0 && unMatchedArray.length == 0) {
+        return true;
+    }
+    return false;
+};
+
+/*
+PROMPT:
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+*/
